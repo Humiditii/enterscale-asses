@@ -13,7 +13,7 @@ export class SmsService {
     @InjectModel(Contact.name) private readonly contactModel: Model<ContactDocument>,
     private readonly queueService:QueueService
   ){}
-  private readonly ISE:string = 'Internal server error!'
+  private readonly ISE:string = 'Internal server error'
 
   // accepts csv file and parse it
   async uploadFile(file:any):Promise<void>{
