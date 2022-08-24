@@ -55,6 +55,10 @@ export class SmsService {
       // add to sms queue 
       const phones:{phone:string, _id:string}[] = await this.contactModel.find().select('phone')
 
+      if(phones.length === 0){
+        throw new HttpException('Ops!, DB has been cleared, empty contact',400)
+      }
+
       const mid_point:number = Math.floor(phones.length/2)
 
       phones.slice(0,mid_point).map( async ({phone}) => await this.queueService.addJob(QueueType.SMS_A, {phone:phone}) )
