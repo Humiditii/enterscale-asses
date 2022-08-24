@@ -47,16 +47,18 @@ $ npm run start:prod
 
 ## Endpoints
 
-* http://localhost:3000/sms/send [GET]
+### BASE_URL: (https://enterscale-pre.herokuapp.com)
 
-* http://localhost:3000/sms/upload [POST]
+* https://enterscale-pre.herokuapp.com/sms/send [GET]
+
+* https://enterscale-pre.herokuapp.com/upload [POST]
 ### Payload for the upload endpoint accepts a csv_file as stated as a formdata. 
 ```
   {
     contact: fake_contact.csv
   }
 ```
-* http://localhost:3000/sms/delete [DELETE]
+* https://enterscale-pre.herokuapp.com/sms/delete [DELETE]
 
 ## Technologies
 * TypeScript => JavaScript
