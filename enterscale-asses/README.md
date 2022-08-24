@@ -56,7 +56,6 @@ $ npm run start:prod
     contact: fake_contact.csv
   }
 ```
-* http://localhost:3000/sms/delete [DELETE]
 
 ## Technologies
 * TypeScript => JavaScript
