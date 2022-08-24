@@ -57,6 +57,15 @@ $ npm run start:prod
   }
 ```
 
+## Technologies
+* TypeScript => JavaScript
+* NestJs (NestJs uses ExpressJs as the core server Framework)
+* Bull & Redis (The combination of these handles the queue)
+* Mongodb & Mongoose (Data persistence and querying)
+
+## Note
+The application efficiently inserts data to the db seamlessly by creating a readable buffer without delaying the server response. Bull queue add job to both sms group and excute the job immediately by running another process that does not affect the application worker.
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
