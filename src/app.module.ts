@@ -11,7 +11,7 @@ import { BullModule } from '@nestjs/bull';
 @Module({
   imports: [
     SmsModule, 
-    MongooseModule.forRoot(process.env.MONGO || 'mongodb://localhost:27017/enterscale-api'),
+    MongooseModule.forRoot(process.env.ORMONGO_URL || 'mongodb://localhost:27017/enterscale-api'),
     BullModule.registerQueue(
       {
         name:QueueType.SMS_A,
