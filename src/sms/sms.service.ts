@@ -49,7 +49,7 @@ export class SmsService {
     }
   }
 
-  async sendSms():Promise<any>{
+  async sendSms():Promise<void>{
     try {
       // group numbers
       // add to sms queue 
@@ -61,6 +61,14 @@ export class SmsService {
 
       phones.slice(mid_point).map( async ({phone}) => await this.queueService.addJob(QueueType.SMS_B, {phone:phone}) )
 
+    } catch (error) {
+      throw new HttpException(error?.message ? error.message : this.ISE, error?.status?error.status:500)
+    }
+  }
+
+  async clearDb():Promise<void>{
+    try {
+      await this.contactModel.deleteMany()
     } catch (error) {
       throw new HttpException(error?.message ? error.message : this.ISE, error?.status?error.status:500)
     }

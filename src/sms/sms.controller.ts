@@ -23,8 +23,20 @@ export class SmsController {
   @Get('send')
   async sendSms(
     @Res() res: Response
-  ){
+  ):Promise<Response>{
     await this.smsService.sendSms()
-    return res.status(200).json({ok:200})
+    return res.status(200).json({
+      message:'SMS sending....'
+    })
+  }
+
+  @Delete('delete')
+  async clearDb(
+    @Res() res: Response
+  ):Promise<Response>{
+    await this.smsService.clearDb()
+    return res.status(200).json({
+      message:'Contact document cleared!'
+    })
   }
 }
