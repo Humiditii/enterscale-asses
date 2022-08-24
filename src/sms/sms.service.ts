@@ -56,7 +56,7 @@ export class SmsService {
       const phones:{phone:string, _id:string}[] = await this.contactModel.find().select('phone')
 
       if(phones.length === 0){
-        throw new HttpException('Ops!, DB has been cleared, empty contact',400)
+        throw new HttpException('Ops!, DB has been cleared, empty contact. Please upload contacts',400)
       }
 
       const mid_point:number = Math.floor(phones.length/2)
