@@ -52,12 +52,15 @@ $ npm run start:prod
 * https://enterscale-pre.herokuapp.com/sms/send [GET]
 
 * https://enterscale-pre.herokuapp.com/upload [POST]
-### Payload for the upload endpoint accepts a csv_file as stated as a formdata. 
+### Payload for the upload endpoint accepts a csv file as a formdata. 
 ```
   {
     contact: fake_contact.csv
   }
+
 ```
+i.e ![alt text](https://github.com/Humiditii/enterscale-asses/blob/main/postman_exe.png?raw=true)
+
 * https://enterscale-pre.herokuapp.com/sms/delete [DELETE]
 
 ## Technologies
